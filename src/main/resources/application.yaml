@@ -1,0 +1,25 @@
+spring:
+  profiles: default
+  jpa:
+    show-sql: false
+datasource:
+  url: jdbc:mysql://172.31.31.22/contactInfo
+  jdbc-url: jdbc:mysql://172.31.31.22/contactInfo
+  username: root
+  password: v3a,)yL6d.P9[GM5
+  driver-class-name: com.mysql.jdbc.Driver
+  test-while-idle: true
+  max-idle: 10
+  min-idle: 10
+  initial-size: 1
+  test-on-borrow: true
+  validation-query: SELECT 1;
+  maxActive: 50
+timeZone: Asia/Calcutta
+server:
+  tomcat:
+    max-threads: 400
+cache:
+  redis:
+    port: 6379
+    host: localhost
