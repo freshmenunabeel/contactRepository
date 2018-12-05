@@ -19,7 +19,7 @@ public class SearchingServiceImpl implements SearchService {
 
 	public List<SearchResultDTO> getSearchResult(String query, Integer page) {
 		List<SearchResultDTO> searchResultDTOS = new ArrayList<>();
-		Object[][] objects = userInfoRepository.search(query, page, SIZE_OF_PAGE);
+		Object[][] objects = userInfoRepository.search(query, page * SIZE_OF_PAGE, SIZE_OF_PAGE);
 		for (Object[] object : objects) {
 			String name = object[0].toString();
 			String email = object[1] == null ? null : object[1].toString();
