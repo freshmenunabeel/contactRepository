@@ -60,7 +60,7 @@ public class UserAccountImpl implements UserAccount {
 	public void addAccount(UserCreateAccountRequestDTO userCreateAccountRequestDTO) {
 		if (userCreateAccountRequestDTO != null) {
 			if (userInfoRepository.findByUniqueUserId(userCreateAccountRequestDTO.getUniqueUserId()) != null) {
-				LOGGER.info("Email already exists");
+				LOGGER.info("User already exists");
 				throw new InputValidationException("User already exist");
 			}
 			UserInfo userInfo = new UserInfo();
@@ -145,7 +145,7 @@ public class UserAccountImpl implements UserAccount {
 				AuthenticationDTO authenticationDTO = new AuthenticationDTO();
 				authenticationDTO.setId(authentication.getId());
 				authenticationDTO.setUserId(authentication.getUserId());
-				authenticationDTO.setToken(authenticationDTO.getToken());
+				authenticationDTO.setToken(authentication.getToken());
 				try {
 					String object = objectMapper.writeValueAsString(authenticationDTO);
 					redisTemplate.opsForValue().set(authenticationDTO.getToken(), object);

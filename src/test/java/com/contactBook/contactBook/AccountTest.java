@@ -35,4 +35,11 @@ public class AccountTest {
 		emails.add("nabeel@gmail.com");
 		userAccount.deleteEmail(emails, 1L);
 	}
+
+	@Test
+	public void loginTest() {
+		List<String> emails = new ArrayList<>();
+		emails.add("nabeel@gmail.com");
+		userAccount.login("userId", "123");
+	}
 }
