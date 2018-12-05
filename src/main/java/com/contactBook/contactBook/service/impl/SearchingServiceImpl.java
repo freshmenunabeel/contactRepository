@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class SearchingServiceImpl implements SearchService {
 
-	private final Integer SIZE_OF_PAGE = 1000;
+	private final Integer SIZE_OF_PAGE = 10;
 
 	@Autowired
 	private UserInfoRepository userInfoRepository;
