@@ -62,7 +62,7 @@ public class Filter implements javax.servlet.Filter {
 					AuthenticationDTO authenticationDTO = new AuthenticationDTO();
 					authenticationDTO.setId(authentication.getId());
 					authenticationDTO.setUserId(authentication.getUserId());
-					authenticationDTO.setToken(authenticationDTO.getToken());
+					authenticationDTO.setToken(authentication.getToken());
 					String object = objectMapper.writeValueAsString(authenticationDTO);
 					redisTemplate.opsForValue().set(authenticationDTO.getToken(), object);
 					return authentication.getUserId();
